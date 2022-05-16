@@ -1,6 +1,8 @@
 {
+  "parser": "babel-eslint",
     "env": {
         "browser": true,
+        "jest": true,
         "es2021": true
     },
     "extends": [
@@ -15,12 +17,23 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jsx-a11y",
+        "import"
     ],
     "rules": {
         "indent": [
             "error",
             "tab"
+        ],
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
         ],
         "linebreak-style": [
             "error",
@@ -34,5 +47,13 @@
             "error",
             "always"
         ]
+    },
+    "global-require": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-expressions": ["error", {"allowTaggedTemplates": true}],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }
